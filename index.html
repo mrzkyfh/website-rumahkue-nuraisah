@@ -10,32 +10,35 @@
 <div class="page-wrapper">
 
   <!-- NAVBAR -->
-  <header>
-  <div class="logo">RUMAHKUE</div>
+<header>
+  <div class="logo">RumahKueNuraisah</div>
 
-  <!-- tombol hamburger (muncul di HP) -->
-  <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">
-    ☰
-  </button>
+  <div class="header-right">
+    <!-- tombol hamburger (muncul di HP) -->
+    <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">
+      ☰
+    </button>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Rumah Kue</a></li>
-      <li><a href="kue.html">Kue</a></li>
-      <li><a href="kue.html#peralatan">Peralatan</a></li>
-      <li><a href="tentang.html">Lainnya</a></li>
-      <li><a href="cara-pesan.html">Jualan di sini</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <ul>
+        <li><a href="index.html">Rumah Kue</a></li>
+        <li><a href="kue.html">Kue</a></li>
+        <li><a href="kue.html#peralatan">Peralatan</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="cara-pesan.html">Cara Pesan</a></li>
 
-  <div class="nav-icons">
-    <div class="nav-icon">🔍</div>
-    <div class="nav-icon cart-icon" onclick="window.location.href='cart.html'">
-      🛒
-      <span id="cart-count" class="cart-count">0</span>
-    </div>
+        <!-- Keranjang di dalam dropdown/menu -->
+        <li class="nav-cart-item">
+          <a href="cart.html">
+            Keranjang
+            <span id="cart-count" class="cart-count-inline">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </header>
+
 
 
   <!-- KONTEN -->
