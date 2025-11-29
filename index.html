@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RumahKue - Jualan Kue Online</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">RUMAHKUE NURAISAH</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Rumah Kue</a></li>
+        <li><a href="kue.html">Produk</a></li>
+        <li><a href="kue.html#peralatan">Peralatan</a></li>
+        <li><a href="cara-pesan.html">Pesan Di Sini</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-icons">
+    <div class="nav-icon cart-icon" onclick="window.location.href='cart.html'">
+    🛒
+    <span id="cart-count" class="cart-count">0</span>
+  </div>
+</div>
+
+  </header>
+
+  <!-- KONTEN -->
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        Selamat datang di <strong>RumahKueNuraisah</strong><br/>
+        Pesan berbagai kue & camilan kekinian langsung dari dapur rumahan.
+      </div>
+      <div class="hero-dots">
+        <div class="hero-dot"></div>
+        <div class="hero-dot active"></div>
+        <div class="hero-dot"></div>
+      </div>
+      
+    </section>
+
+    <!-- BISKUIT -->
+    <section>
+      <div class="section-header">
+        <div class="section-title">BISKUIT</div>
+        <div class="section-more" onclick="location.href='kue.html'">Lihat semua ➜</div>
+      </div>
+
+      <div class="product-row">
+        <article class="product-card">
+          <div class="product-image">
+            <span>Gambar</span>
+          </div>
+          <div class="product-info">
+            <div class="product-name">Monde Butter Cookies 150gr</div>
+            <div class="product-size">Biskuit mentega premium</div>
+            <div class="product-price">Rp 19.900</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round" onclick="location.href='detail-kue.html'">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image"><span>Gambar</span></div>
+          <div class="product-info">
+            <div class="product-name">Kastengel Keju Rumahan</div>
+            <div class="product-size">Toples 250gr</div>
+            <div class="product-price">Rp 45.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image"><span>Gambar</span></div>
+          <div class="product-info">
+            <div class="product-name">Choco Chips Cookies</div>
+            <div class="product-size">Premium Gluten Free</div>
+            <div class="product-price-old">Rp 35.000</div>
+            <div class="product-price-new">Rp 32.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- KUE KERING -->
+    <section>
+      <div class="section-header">
+        <div class="section-title">KUE KERING</div>
+        <div class="section-more" onclick="location.href='kue.html'">Lihat semua ➜</div>
+      </div>
+      <div class="product-row">
+        <article class="product-card">
+          <div class="product-image"><span>Gambar</span></div>
+          <div class="product-info">
+            <div class="product-name">Nastar Premium</div>
+            <div class="product-size">Toples 300gr</div>
+            <div class="product-price">Rp 70.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image"><span>Gambar</span></div>
+          <div class="product-info">
+            <div class="product-name">Putri Salju</div>
+            <div class="product-size">Toples 250gr</div>
+            <div class="product-price">Rp 60.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image"><span>Gambar</span></div>
+          <div class="product-info">
+            <div class="product-name">Kue Semprit Cokelat</div>
+            <div class="product-size">Toples 250gr</div>
+            <div class="product-price-old">Rp 55.000</div>
+            <div class="product-price-new">Rp 49.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="cart.js"></script>
+</body>
+</html>

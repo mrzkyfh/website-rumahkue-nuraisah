@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cara Pemesanan - RumahKue</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="page-wrapper">
+  <header>
+    <div class="logo">RUMAHKUE</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Rumah Kue</a></li>
+        <li><a href="kue.html">Kue</a></li>
+        <li><a href="kue.html#peralatan">Peralatan</a></li>
+        <li><a href="cara-pesan.html">Pesan Di Sini</a></li>
+      </ul>
+    </nav>
+    <div class="nav-icons">
+      <div class="nav-icon">☾</div>
+      <div class="nav-icon">🔍</div>
+      <div class="nav-icon cart-icon" onclick="window.location.href='cart.html'">
+        🛒
+        <span id="cart-count" class="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h2>Cara Pemesanan</h2>
+    <p style="font-size:13px;color:#6b7280;margin-top:4px;">
+      Pembelian bisa melalui form di bawah atau langsung chat WhatsApp.
+    </p>
+
+    <div class="order-steps">
+      <div class="step-card">
+        <div class="step-title">1. Pilih Produk</div>
+        <p>Pilih kue yang kamu mau dari halaman <strong>Kue</strong>.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-title">2. Isi Data</div>
+        <p>Isi nama, alamat, dan pilihan produk pada form pemesanan.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-title">3. Konfirmasi</div>
+        <p>Kami akan menghubungi via WhatsApp untuk konfirmasi & ongkir.</p>
+      </div>
+    </div>
+
+    <!-- FORM SEDERHANA -->
+    <div class="simple-form">
+      <form
+        action="mailto:emailkamu@example.com"
+        method="post"
+        enctype="text/plain"
+      >
+        <div class="simple-form-row">
+          <label>Nama Lengkap</label>
+          <input type="text" name="nama" required />
+        </div>
+
+        <div class="simple-form-row">
+          <label>Nomor WhatsApp</label>
+          <input type="text" name="wa" placeholder="08xxxxxxxxxx" required />
+        </div>
+
+        <div class="simple-form-row">
+          <label>Alamat Lengkap</label>
+          <textarea name="alamat" required></textarea>
+        </div>
+
+        <div class="simple-form-row">
+          <label>Pilihan Produk</label>
+          <select name="produk">
+            <option value="Nastar Premium">Nastar Premium</option>
+            <option value="Putri Salju">Putri Salju</option>
+            <option value="Kue Semprit Cokelat">Kue Semprit Cokelat</option>
+            <option value="Choco Chips Cookies">Choco Chips Cookies</option>
+          </select>
+        </div>
+
+        <div class="simple-form-row">
+          <label>Catatan Tambahan</label>
+          <textarea
+            name="catatan"
+            placeholder="Contoh: kirim hari Sabtu, jam 3 sore."
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">
+          Kirim Pesanan via Email
+        </button>
+      </form>
+
+      <p style="font-size:12px;color:#6b7280;margin-top:10px;">
+        Atau pesan cepat via WhatsApp:
+        <a
+          href="https://wa.me/6281234567890?text=Halo%20RumahKue,%20saya%20ingin%20pesan%20kue."
+          target="_blank"
+        >
+          klik di sini
+        </a>.
+      </p>
+    </div>
+  </main>
+</div>
+
+<script src="cart.js"></script>
+</body>
+</html>
