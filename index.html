@@ -11,24 +11,32 @@
 
   <!-- NAVBAR -->
   <header>
-    <div class="logo">RUMAHKUE NURAISAH</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Rumah Kue</a></li>
-        <li><a href="kue.html">Produk</a></li>
-        <li><a href="kue.html#peralatan">Peralatan</a></li>
-        <li><a href="cara-pesan.html">Pesan Di Sini</a></li>
-      </ul>
-    </nav>
+  <div class="logo">RUMAHKUE</div>
 
-    <div class="nav-icons">
+  <!-- tombol hamburger (muncul di HP) -->
+  <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">
+    ☰
+  </button>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Rumah Kue</a></li>
+      <li><a href="kue.html">Kue</a></li>
+      <li><a href="kue.html#peralatan">Peralatan</a></li>
+      <li><a href="tentang.html">Lainnya</a></li>
+      <li><a href="cara-pesan.html">Jualan di sini</a></li>
+    </ul>
+  </nav>
+
+  <div class="nav-icons">
+    <div class="nav-icon">🔍</div>
     <div class="nav-icon cart-icon" onclick="window.location.href='cart.html'">
-    🛒
-    <span id="cart-count" class="cart-count">0</span>
+      🛒
+      <span id="cart-count" class="cart-count">0</span>
+    </div>
   </div>
-</div>
+</header>
 
-  </header>
 
   <!-- KONTEN -->
   <main>
