@@ -31,7 +31,7 @@ body {
 
 /* HEADER / NAVBAR */
 header {
-  background: var(--orange);
+  background: #E83C91;
   color: #fff;
   padding: 10px 32px;
   display: flex;
@@ -530,84 +530,3 @@ footer {
   }
 }
 
-/* ICON KERANJANG */
-.nav-icon.cart-icon {
-  position: relative;
-}
-
-.cart-count {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  background: #ef4444;
-  color: #fff;
-  font-size: 10px;
-  min-width: 16px;
-  height: 16px;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* TAMPILAN KERANJANG */
-.cart-wrapper {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 16px;
-  border: 1px solid #e5e7eb;
-  margin-top: 16px;
-}
-
-.cart-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
-}
-
-.cart-table th,
-.cart-table td {
-  padding: 8px;
-  border-bottom: 1px solid #e5e7eb;
-  text-align: left;
-}
-
-.cart-table th {
-  background: #f9fafb;
-}
-
-.cart-qty-btn {
-  border: 1px solid #d1d5db;
-  background: #fff;
-  border-radius: 999px;
-  width: 22px;
-  height: 22px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.cart-remove {
-  border: none;
-  background: transparent;
-  color: #ef4444;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.cart-summary {
-  margin-top: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-}
-
-.cart-empty {
-  font-size: 13px;
-  color: #6b7280;
-  text-align: center;
-  padding: 20px 0;
-}
