@@ -4,75 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RumahKue - Jualan Kue Online</title>
+
+  <!-- FONT OPSIONAL -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS utama -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <div class="page-wrapper">
 
   <!-- NAVBAR -->
-<header>
-  <div class="logo">RumahKueNuraisah</div>
+  <header>
+    <div class="logo">RumahKueNuraisah</div>
 
-  <div class="header-right">
-    <!-- tombol hamburger (muncul di HP) -->
-    <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">
-      ☰
-    </button>
+    <div class="header-right">
+      <!-- tombol hamburger (muncul di HP) -->
+      <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">
+        ☰
+      </button>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Rumah Kue</a></li>
-        <li><a href="kue.html">Kue</a></li>
-        <li><a href="kue.html#peralatan">Peralatan</a></li>
-        <li><a href="tentang.html">Tentang</a></li>
-        <li><a href="cara-pesan.html">Cara Pesan</a></li>
-
-        <!-- Keranjang di dalam dropdown/menu -->
-        <li class="nav-cart-item">
-          <a href="cart.html">
-            Keranjang
-            <span id="cart-count" class="cart-count-inline">0</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-
+      <nav>
+        <ul>
+          <li><a href="index.html">Rumah Kue</a></li>
+          <li><a href="kue.html">Kue</a></li>
+          <li><a href="kue.html#peralatan">Peralatan</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="cara-pesan.html">Cara Pesan</a></li>
+          <li class="nav-cart-item">
+            <a href="cart.html">
+              Keranjang
+              <span id="cart-count" class="cart-count-inline">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- KONTEN -->
   <main>
+
     <!-- HERO -->
     <section class="hero">
-      <div class="hero-text">
-        Selamat datang di <strong>RumahKueNuraisah</strong><br/>
-        Pesan berbagai kue & camilan kekinian langsung dari dapur rumahan.
+      <div class="hero-left">
+        <!-- ganti src dengan foto kue milikmu -->
+        <img src="images/hero-kue.jpg" alt="Kue cantik RumahKueNuraisah">
       </div>
-      <div class="hero-dots">
-        <div class="hero-dot"></div>
-        <div class="hero-dot active"></div>
-        <div class="hero-dot"></div>
+      <div class="hero-right">
+        <div class="hero-subtitle">Kue Rumahan Fresh Setiap Hari</div>
+        <h1 class="hero-title">Rayakan Momen Manismu di RumahKueNuraisah</h1>
+        <p class="hero-desc">
+          Pesan berbagai kue tart, kue kering, dan camilan kekinian langsung dari dapur rumahan.
+          Cocok untuk ulang tahun, arisan, hantaran, sampai hampers lebaran.
+        </p>
+        <div class="hero-cta">
+          <a href="kue.html" class="btn-cta">Temukan Kue Favoritmu</a>
+        </div>
       </div>
-      
     </section>
 
-    <!-- BISKUIT -->
+    <!-- (opsional) GRID PRODUK DINAMIS dari JS -->
+    <section id="produk-grid" class="produk-grid"></section>
+
+    <!-- ============= 1. KUE KEMASAN BOX ============= -->
     <section>
       <div class="section-header">
-        <div class="section-title">BISKUIT</div>
-        <div class="section-more" onclick="location.href='kue.html'">Lihat semua ➜</div>
+        <div class="section-title">KUE KEMASAN BOX</div>
+        <div class="section-more" onclick="location.href='kategori/kuekemasanbox.html'">Lihat semua ➜</div>
       </div>
 
       <div class="product-row">
         <article class="product-card">
           <div class="product-image">
-            <span>Gambar</span>
+            <img src="images/biskuit-monde.jpg" alt="Snack Box Mini" />
           </div>
           <div class="product-info">
-            <div class="product-name">Monde Butter Cookies 150gr</div>
-            <div class="product-size">Biskuit mentega premium</div>
-            <div class="product-price">Rp 19.900</div>
+            <div class="product-name">Snack Box Mini</div>
+            <div class="product-size">Isi 3 pcs kue campur</div>
+            <div class="product-price">Rp 18.000</div>
           </div>
           <div class="product-action">
             <button class="btn-round" onclick="location.href='detail-kue.html'">+</button>
@@ -80,11 +90,13 @@
         </article>
 
         <article class="product-card">
-          <div class="product-image"><span>Gambar</span></div>
+          <div class="product-image">
+            <img src="images/biskuit-kastengel.jpg" alt="Snack Box Premium" />
+          </div>
           <div class="product-info">
-            <div class="product-name">Kastengel Keju Rumahan</div>
-            <div class="product-size">Toples 250gr</div>
-            <div class="product-price">Rp 45.000</div>
+            <div class="product-name">Snack Box Premium</div>
+            <div class="product-size">Isi 4 pcs (manis & asin)</div>
+            <div class="product-price">Rp 25.000</div>
           </div>
           <div class="product-action">
             <button class="btn-round">+</button>
@@ -92,12 +104,13 @@
         </article>
 
         <article class="product-card">
-          <div class="product-image"><span>Gambar</span></div>
+          <div class="product-image">
+            <img src="images/biskuit-chocochips.jpg" alt="Snack Box Meeting" />
+          </div>
           <div class="product-info">
-            <div class="product-name">Choco Chips Cookies</div>
-            <div class="product-size">Premium Gluten Free</div>
-            <div class="product-price-old">Rp 35.000</div>
-            <div class="product-price-new">Rp 32.000</div>
+            <div class="product-name">Snack Box Meeting</div>
+            <div class="product-size">Cocok untuk acara kantor</div>
+            <div class="product-price">Rp 27.000</div>
           </div>
           <div class="product-action">
             <button class="btn-round">+</button>
@@ -106,27 +119,32 @@
       </div>
     </section>
 
-    <!-- KUE KERING -->
+    <!-- ============= 2. KUE KERING ============= -->
     <section>
       <div class="section-header">
         <div class="section-title">KUE KERING</div>
-        <div class="section-more" onclick="location.href='kue.html'">Lihat semua ➜</div>
+        <div class="section-more" onclick="location.href='kategori/kuekering.html'">Lihat semua ➜</div>
       </div>
+
       <div class="product-row">
         <article class="product-card">
-          <div class="product-image"><span>Gambar</span></div>
+          <div class="product-image">
+            <img src="images/kering-nastar.jpg" alt="Nastar Premium" />
+          </div>
           <div class="product-info">
             <div class="product-name">Nastar Premium</div>
             <div class="product-size">Toples 300gr</div>
             <div class="product-price">Rp 70.000</div>
           </div>
           <div class="product-action">
-            <button class="btn-round">+</button>
+            <button class="btn-round" onclick="location.href='detail-kue.html'">+</button>
           </div>
         </article>
 
         <article class="product-card">
-          <div class="product-image"><span>Gambar</span></div>
+          <div class="product-image">
+            <img src="images/kering-putrisalju.jpg" alt="Putri Salju" />
+          </div>
           <div class="product-info">
             <div class="product-name">Putri Salju</div>
             <div class="product-size">Toples 250gr</div>
@@ -138,7 +156,9 @@
         </article>
 
         <article class="product-card">
-          <div class="product-image"><span>Gambar</span></div>
+          <div class="product-image">
+            <img src="images/kering-semprit.jpg" alt="Kue Semprit Cokelat" />
+          </div>
           <div class="product-info">
             <div class="product-name">Kue Semprit Cokelat</div>
             <div class="product-size">Toples 250gr</div>
@@ -151,8 +171,512 @@
         </article>
       </div>
     </section>
+
+    <!-- ============= 3. FROZEN FOOD ============= -->
+    <section>
+      <div class="section-header">
+        <div class="section-title">FROZEN FOOD</div>
+        <div class="section-more" onclick="location.href='kategori/frozenfood.html'">Lihat semua ➜</div>
+      </div>
+
+      <div class="product-row">
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Dimsum Ayam Frozen" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Dimsum Ayam Frozen</div>
+            <div class="product-size">Pack isi 20 pcs</div>
+            <div class="product-price">Rp 38.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Risol Mayo Frozen" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Risol Mayo Frozen</div>
+            <div class="product-size">Pack isi 10 pcs</div>
+            <div class="product-price">Rp 32.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Kroket Kentang Frozen" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Kroket Kentang Frozen</div>
+            <div class="product-size">Pack isi 10 pcs</div>
+            <div class="product-price">Rp 30.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============= 4. KUE PAKETAN ============= -->
+    <section>
+      <div class="section-header">
+        <div class="section-title">KUE PAKETAN</div>
+        <div class="section-more" onclick="location.href='kategori/kuepaketan.html'">Lihat semua ➜</div>
+      </div>
+
+      <div class="product-row">
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/biskuit-monde.jpg" alt="Paket Lebaran A" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Paket Lebaran A</div>
+            <div class="product-size">3 toples kue kering</div>
+            <div class="product-price">Rp 150.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/biskuit-kastengel.jpg" alt="Paket Lebaran B" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Paket Lebaran B</div>
+            <div class="product-size">5 toples kue campur</div>
+            <div class="product-price">Rp 250.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/kering-nastar.jpg" alt="Paket Arisan" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Paket Arisan</div>
+            <div class="product-size">Snack box + kue kering</div>
+            <div class="product-price">Rp 200.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============= 5. KUDAPAN ============= -->
+    <section>
+      <div class="section-header">
+        <div class="section-title">KUDAPAN</div>
+        <div class="section-more" onclick="location.href='kategori/kudapan.html'">Lihat semua ➜</div>
+      </div>
+
+      <div class="product-row">
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Pisang Cokelat" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Pisang Cokelat</div>
+            <div class="product-size">Box isi 10 pcs</div>
+            <div class="product-price">Rp 22.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Cireng Isi" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Cireng Isi</div>
+            <div class="product-size">Pack isi 15 pcs</div>
+            <div class="product-price">Rp 20.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Tahu Bakso" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Tahu Bakso</div>
+            <div class="product-size">Box isi 10 pcs</div>
+            <div class="product-price">Rp 28.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============= 6. MENU MASAKAN ============= -->
+    <section>
+      <div class="section-header">
+        <div class="section-title">MENU MASAKAN</div>
+        <div class="section-more" onclick="location.href='kategori/menumasakan.html'">Lihat semua ➜</div>
+      </div>
+
+      <div class="product-row">
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Ayam Suwir Pedas" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Ayam Suwir Pedas</div>
+            <div class="product-size">Porsi untuk 2–3 orang</div>
+            <div class="product-price">Rp 35.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Spaghetti Rumahan" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Spaghetti Rumahan</div>
+            <div class="product-size">1 box saji</div>
+            <div class="product-price">Rp 28.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Nasi Bento Rumahan" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nasi Bento Rumahan</div>
+            <div class="product-size">Nasi + lauk lengkap</div>
+            <div class="product-price">Rp 30.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============= 7. ANEKA ROTI ============= -->
+    <section>
+      <div class="section-header">
+        <div class="section-title">ANEKA ROTI</div>
+        <div class="section-more" onclick="location.href='kategori/anekaroti.html'">Lihat semua ➜</div>
+      </div>
+
+      <div class="product-row">
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Roti Sobek Cokelat" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Roti Sobek Cokelat</div>
+            <div class="product-size">1 loyang</div>
+            <div class="product-price">Rp 28.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Roti Tawar Homemade" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Roti Tawar Homemade</div>
+            <div class="product-size">1 loaf</div>
+            <div class="product-price">Rp 22.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Roti Isi Keju" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Roti Isi Keju</div>
+            <div class="product-size">Box isi 6 pcs</div>
+            <div class="product-price">Rp 30.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============= 8. KUE ASIN ============= -->
+    <section>
+      <div class="section-header">
+        <div class="section-title">KUE ASIN</div>
+        <div class="section-more" onclick="location.href='kategori/kueasin.html'">Lihat semua ➜</div>
+      </div>
+
+      <div class="product-row">
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/kering-semprit.jpg" alt="Pastel Mini" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Pastel Mini</div>
+            <div class="product-size">Toples 250gr</div>
+            <div class="product-price">Rp 48.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/kering-nastar.jpg" alt="Cheese Stick" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Cheese Stick</div>
+            <div class="product-size">Toples 250gr</div>
+            <div class="product-price">Rp 50.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/kering-putrisalju.jpg" alt="Kue Bawang" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Kue Bawang</div>
+            <div class="product-size">Toples 300gr</div>
+            <div class="product-price">Rp 45.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============= 9. ANEKA PUDING ============= -->
+    <section>
+      <div class="section-header">
+        <div class="section-title">ANEKA PUDING</div>
+        <div class="section-more" onclick="location.href='kategori/anekapuding.html'">Lihat semua ➜</div>
+      </div>
+
+      <div class="product-row">
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Puding Cokelat Vla" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Puding Cokelat Vla</div>
+            <div class="product-size">Loyang kecil</div>
+            <div class="product-price">Rp 28.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Puding Susu Buah" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Puding Susu Buah</div>
+            <div class="product-size">Cup isi 6 pcs</div>
+            <div class="product-price">Rp 30.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/hero-kue.jpg" alt="Puding Karamel" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Puding Karamel</div>
+            <div class="product-size">Loyang sedang</div>
+            <div class="product-price">Rp 35.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============= 10. KUE MANIS ============= -->
+    <section>
+      <div class="section-header">
+        <div class="section-title">KUE MANIS</div>
+        <div class="section-more" onclick="location.href='kategori/kuemanis.html'">Lihat semua ➜</div>
+      </div>
+
+      <div class="product-row">
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/biskuit-chocochips.jpg" alt="Brownies Lumer" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Brownies Lumer</div>
+            <div class="product-size">Loyang kecil</div>
+            <div class="product-price">Rp 35.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/biskuit-monde.jpg" alt="Bolu Kukus Cokelat" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Bolu Kukus Cokelat</div>
+            <div class="product-size">Box 6 pcs</div>
+            <div class="product-price">Rp 28.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/kering-putrisalju.jpg" alt="Klepon Cake" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Klepon Cake</div>
+            <div class="product-size">Diameter 16 cm</div>
+            <div class="product-price">Rp 90.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============= 11. MUFFIN & CUP CAKE ============= -->
+    <section>
+      <div class="section-header">
+        <div class="section-title">MUFFIN & CUP CAKE</div>
+        <div class="section-more" onclick="location.href='kategori/muffin.html'">Lihat semua ➜</div>
+      </div>
+
+      <div class="product-row">
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/biskuit-chocochips.jpg" alt="Chocolate Muffin" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Chocolate Muffin</div>
+            <div class="product-size">Box isi 6 pcs</div>
+            <div class="product-price">Rp 40.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/biskuit-monde.jpg" alt="Vanilla Cup Cake" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Vanilla Cup Cake</div>
+            <div class="product-size">Box isi 6 pcs</div>
+            <div class="product-price">Rp 38.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="images/kering-nastar.jpg" alt="Red Velvet Cup Cake" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Red Velvet Cup Cake</div>
+            <div class="product-size">Box isi 6 pcs</div>
+            <div class="product-price">Rp 45.000</div>
+          </div>
+          <div class="product-action">
+            <button class="btn-round">+</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section>
+      <h2 class="testi-title">Testimonial</h2>
+      <div class="testi-layout">
+        <div class="testi-photo">
+          <!-- ganti foto pelanggan -->
+          <img src="images/testi-pelanggan.jpg" alt="Pelanggan RumahKueNuraisah">
+        </div>
+        <div class="testi-text">
+          <div class="testi-item">
+            “Kuena cantik, rasanya lembut banget. Anak-anak suka semua!”
+            <span class="testi-name">– Sarah W.</span>
+          </div>
+          <div class="testi-item">
+            “Pesanan selalu sesuai ekspektasi, packaging rapi, cocok buat hampers.”
+            <span class="testi-name">– Maya S.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <p>Dapatkan update & promo spesial dari RumahKueNuraisah!</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Alamat email kamu">
+        <button type="submit">Daftar</button>
+      </form>
+      <div class="social">
+        Ikuti kami di Instagram · TikTok · WhatsApp
+      </div>
+    </section>
+
   </main>
 </div>
+
 <script src="cart.js"></script>
+<script src="produk.js"></script>
 </body>
 </html>

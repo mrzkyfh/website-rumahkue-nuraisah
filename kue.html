@@ -12,10 +12,7 @@
   <div class="logo">RumahKueNuraisah</div>
 
   <div class="header-right">
-    <!-- tombol hamburger (muncul di HP) -->
-    <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">
-      ☰
-    </button>
+    <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">☰</button>
 
     <nav>
       <ul>
@@ -25,7 +22,6 @@
         <li><a href="tentang.html">Tentang</a></li>
         <li><a href="cara-pesan.html">Cara Pesan</a></li>
 
-        <!-- Keranjang di dalam dropdown/menu -->
         <li class="nav-cart-item">
           <a href="cart.html">
             Keranjang
@@ -45,58 +41,47 @@
     </p>
 
     <div class="product-grid" style="margin-top:16px;">
-      <!-- contoh produk, duplikasi saja -->
+
+      <!-- PRODUK 1 -->
       <a href="detail-kue.html" class="product-grid-card">
-        <div class="product-grid-image"><span>Gambar</span></div>
+        <div class="product-grid-image">
+          <img src="images/kering-nastar.jpg" alt="Nastar Premium" />
+        </div>
         <div class="product-grid-name">Nastar Premium</div>
         <div class="product-grid-size">Toples 300gr</div>
         <div class="product-grid-price">Rp 70.000</div>
       </a>
 
+      <!-- PRODUK 2 -->
       <a href="detail-kue.html" class="product-grid-card">
-        <div class="product-grid-image"><span>Gambar</span></div>
+        <div class="product-grid-image">
+          <img src="images/kering-putrisalju.jpg" alt="Putri Salju" />
+        </div>
         <div class="product-grid-name">Putri Salju</div>
         <div class="product-grid-size">Toples 250gr</div>
         <div class="product-grid-price">Rp 60.000</div>
       </a>
 
+      <!-- PRODUK 3 -->
       <a href="detail-kue.html" class="product-grid-card">
-        <div class="product-grid-image"><span>Gambar</span></div>
+        <div class="product-grid-image">
+          <img src="images/kering-semprit.jpg" alt="Kue Semprit Cokelat" />
+        </div>
         <div class="product-grid-name">Kue Semprit Cokelat</div>
         <div class="product-grid-size">Toples 250gr</div>
         <div class="product-grid-price">Rp 49.000</div>
       </a>
 
+      <!-- PRODUK 4 -->
       <a href="detail-kue.html" class="product-grid-card">
-        <div class="product-grid-image"><span>Gambar</span></div>
+        <div class="product-grid-image">
+          <img src="images/biskuit-chocochips.jpg" alt="Choco Chips Cookies" />
+        </div>
         <div class="product-grid-name">Choco Chips Cookies</div>
         <div class="product-grid-size">Premium Gluten Free</div>
         <div class="product-grid-price">Rp 32.000</div>
       </a>
     </div>
-
-    <!-- PERALATAN (bagian bawah halaman) -->
-    <section id="peralatan" style="margin-top:32px;">
-      <div class="section-header">
-        <div class="section-title">PERALATAN</div>
-      </div>
-
-      <div class="product-grid">
-        <div class="product-grid-card">
-          <div class="product-grid-image"><span>Gambar</span></div>
-          <div class="product-grid-name">Loyang Kue Bulat</div>
-          <div class="product-grid-size">Diameter 20 cm</div>
-          <div class="product-grid-price">Rp 35.000</div>
-        </div>
-
-        <div class="product-grid-card">
-          <div class="product-grid-image"><span>Gambar</span></div>
-          <div class="product-grid-name">Spatula Silikon</div>
-          <div class="product-grid-size">Tahan panas</div>
-          <div class="product-grid-price">Rp 18.000</div>
-        </div>
-      </div>
-    </section>
 
     <footer>
       &copy; 2025 RumahKue. Semua hak cipta dilindungi.
@@ -104,6 +89,5 @@
   </main>
 </div>
 <script src="cart.js"></script>
-
 </body>
 </html>
