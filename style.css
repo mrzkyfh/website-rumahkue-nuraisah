@@ -1,4 +1,6 @@
-/* ========== RESET DASAR ========== */
+/* =========================
+   RESET DASAR
+   ========================= */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,7 +23,9 @@ a {
   color: inherit;
 }
 
-/* ========== WRAPPER HALAMAN ========== */
+/* =========================
+   WRAPPER HALAMAN
+   ========================= */
 .page-wrapper {
   max-width: 1100px;
   margin: 24px auto;
@@ -31,7 +35,9 @@ a {
   overflow: hidden;
 }
 
-/* ========== HEADER / NAVBAR ========== */
+/* =========================
+   HEADER / NAVBAR
+   ========================= */
 header {
   background: #fff6e7;
   padding: 16px 40px;
@@ -94,15 +100,14 @@ nav a:hover {
   cursor: pointer;
 }
 
-/* ========== MAIN & JUDUL HALAMAN ========== */
+/* =========================
+   MAIN & JUDUL HALAMAN
+   ========================= */
 main {
   padding-bottom: 24px;
 }
 
-section {
-  padding: 24px 40px 16px;
-}
-
+/* judul umum (mis. di index) */
 .page-title {
   font-family: "Playfair Display", serif;
   font-size: 24px;
@@ -116,7 +121,30 @@ section {
   padding: 0 40px 8px;
 }
 
-/* ========== HERO (INDEX) ========== */
+/* judul khusus halaman “Semua Kue” */
+.title-section {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #7a4a4a;
+  padding: 24px 40px 4px;
+}
+
+.subtitle-section {
+  font-size: 14px;
+  color: #6b5b4c;
+  padding: 0 40px 16px;
+  line-height: 1.5;
+}
+
+/* section wrapper umum (kalau dipakai) */
+section {
+  padding: 24px 40px 16px;
+}
+
+/* =========================
+   HERO (INDEX)
+   ========================= */
 .hero {
   display: flex;
   gap: 32px;
@@ -180,7 +208,9 @@ section {
   background: #d16c6c;
 }
 
-/* ========== SECTION UMUM ========== */
+/* =========================
+   SECTION HEADER KECIL
+   ========================= */
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -204,10 +234,12 @@ section {
   text-decoration: underline;
 }
 
-/* ========== LIST PRODUK (ROW GRID – INDEX) ========== */
+/* =========================
+   LIST PRODUK (ROW – INDEX)
+   ========================= */
 .product-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -277,10 +309,12 @@ section {
   background: #d16c6c;
 }
 
-/* ========== GRID PRODUK (HALAMAN KUE) ========== */
+/* =========================
+   GRID PRODUK (HALAMAN KUE)
+   ========================= */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
   padding: 0 40px 24px;
 }
@@ -293,11 +327,12 @@ section {
   padding: 10px;
   border: 1px solid #f0e2d5;
   box-shadow: 0 8px 18px rgba(0,0,0,0.03);
+  transition: transform 0.15s, box-shadow 0.15s;
 }
 
 .product-grid-card:hover {
-  transform: translateY(-2px);
-  transition: 0.15s;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
 }
 
 .product-grid-image {
@@ -333,7 +368,9 @@ section {
   color: #c46d6d;
 }
 
-/* ========== DETAIL PRODUK ========== */
+/* =========================
+   DETAIL PRODUK
+   ========================= */
 .detail-layout {
   display: grid;
   grid-template-columns: 1.2fr 1.8fr;
@@ -427,7 +464,9 @@ section {
   background: #fff6e7;
 }
 
-/* ========== TESTIMONIAL ========== */
+/* =========================
+   TESTIMONIAL
+   ========================= */
 .testi-title {
   text-align: center;
   margin-top: 8px;
@@ -464,7 +503,9 @@ section {
   margin-top: 2px;
 }
 
-/* ========== NEWSLETTER ========== */
+/* =========================
+   NEWSLETTER
+   ========================= */
 .newsletter {
   text-align: center;
   padding: 16px 40px 24px;
@@ -507,7 +548,9 @@ section {
   color: #9a8674;
 }
 
-/* ========== CART ========== */
+/* =========================
+   CART
+   ========================= */
 .cart-wrapper {
   background: #fffdf9;
   border-radius: 16px;
@@ -571,10 +614,12 @@ section {
   padding: 20px 0;
 }
 
-/* ========== CARA PESAN / FORM ========== */
+/* =========================
+   CARA PESAN / FORM
+   ========================= */
 .order-steps {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin: 16px 40px 24px;
 }
@@ -626,7 +671,9 @@ section {
   min-height: 80px;
 }
 
-/* ========== FOOTER ========== */
+/* =========================
+   FOOTER
+   ========================= */
 footer {
   margin-top: 16px;
   padding: 12px 40px 20px;
@@ -636,7 +683,9 @@ footer {
   text-align: center;
 }
 
-/* ========== RESPONSIVE ========== */
+/* =========================
+   RESPONSIVE
+   ========================= */
 @media (max-width: 900px) {
   header {
     padding: 12px 16px;
@@ -648,27 +697,41 @@ footer {
     padding: 24px 20px 32px;
   }
 
-  .product-row {
-    grid-template-columns: 1fr 1fr;
-  }
-
   section {
     padding: 20px 20px 12px;
   }
 
-  .testi-layout {
-    grid-template-columns: 1fr;
-    padding: 18px 20px 24px;
+  .page-title,
+  .page-subtitle {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .title-section {
+    padding: 20px 20px 4px;
+  }
+
+  .subtitle-section {
+    padding: 0 20px 14px;
+  }
+
+  .product-row {
+    grid-template-columns: 1fr 1fr;
   }
 
   .product-grid {
-    grid-template-columns: repeat(2, minmax(0,1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     padding: 0 20px 24px;
   }
 
   .detail-layout {
     grid-template-columns: 1fr;
     padding: 20px 20px 28px;
+  }
+
+  .testi-layout {
+    grid-template-columns: 1fr;
+    padding: 18px 20px 24px;
   }
 
   .order-steps {
@@ -684,20 +747,8 @@ footer {
   .cart-wrapper {
     margin: 12px 20px 24px;
   }
-}
 
-@media (max-width: 640px) {
-  .product-row {
-    grid-template-columns: 1fr;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* NAV RESPONSIVE (setelah breakpoint supaya override) */
-@media (max-width: 900px) {
+  /* nav responsive */
   nav ul {
     display: none;
   }
@@ -720,25 +771,12 @@ footer {
   }
 }
 
-/* TITLE SECTION */
-.title-section {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: #333;
-}
+@media (max-width: 640px) {
+  .product-row {
+    grid-template-columns: 1fr;
+  }
 
-.subtitle-section {
-  font-size: 15px;
-  color: #6b7280;
-  margin-bottom: 25px;
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }
-
-/* PRODUCT GRID LAYOUT */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 25px;
-  margin-top: 10px;
-}
-
