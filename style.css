@@ -780,3 +780,18 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+.product-image {
+  width: 100%;
+  height: 160px;          /* atur tinggi card sesuai keinginan */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3eee8;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* gambar dipotong agar tetap proporsional */
+  object-position: center;
+}
