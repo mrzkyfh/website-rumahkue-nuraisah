@@ -8,81 +8,81 @@
 </head>
 <body>
 <div class="page-wrapper">
-  <!-- NAVBAR -->
-<header>
-  <div class="logo">RumahKueNuraisah</div>
+  <!-- NAVBAR (sama seperti index.html) -->
+  <header>
+    <div class="logo">RumahKueNuraisah</div>
 
-  <div class="header-right">
-    <!-- tombol hamburger (muncul di HP) -->
-    <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">
-      ☰
-    </button>
+    <div class="header-right">
+      <!-- tombol hamburger (muncul di HP) -->
+      <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">
+        ☰
+      </button>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Rumah Kue</a></li>
-        <li><a href="kue.html">Kue</a></li>
-        <li><a href="kue.html#peralatan">Peralatan</a></li>
-        <li><a href="cara-pesan.html">Cara Pesan</a></li>
-
-        <!-- Keranjang di dalam dropdown/menu -->
-        <li class="nav-cart-item">
-          <a href="cart.html">
-            Keranjang
-            <span id="cart-count" class="cart-count-inline">0</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-
-  <!-- KONTEN KERANJANG -->
-  <main>
-    <h2>Keranjang Belanja</h2>
-    <p style="font-size:13px;color:#6b7280;margin-top:4px;">
-      Atur jumlah produk di sini sebelum konfirmasi pemesanan.
-    </p>
-
-    <div class="cart-wrapper">
-      <div id="cart-empty" class="cart-empty">
-        Keranjang masih kosong. Silakan pilih kue di halaman <a href="kue.html">Kue</a>.
-      </div>
-
-      <table class="cart-table">
-        <thead>
-          <tr>
-            <th>Produk</th>
-            <th>Harga</th>
-            <th>Jumlah</th>
-            <th>Subtotal</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="cart-items">
-          <!-- diisi otomatis oleh JS -->
-        </tbody>
-      </table>
-
-      <div class="cart-summary">
-        <div>Total</div>
-        <div id="cart-total">Rp 0</div>
-      </div>
-
-      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
-        <a href="kue.html" class="btn-outline">← Belanja lagi</a>
-        <a
-          href="https://wa.me/6281284814952?text=Halo%20RumahKue,%20saya%20sudah%20isi%20keranjang%20dan%20ingin%20konfirmasi%20pesanan."
-          target="_blank"
-          class="btn-primary"
-        >
-          Konfirmasi via WhatsApp
-        </a>
-      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Rumah Kue</a></li>
+          <li><a href="kue.html">Kue</a></li>
+          <li><a href="kue.html#peralatan">Peralatan</a></li>
+          <li><a href="cara-pesan.html">Cara Pesan</a></li>
+          <li class="nav-cart-item">
+            <a href="cart.html">
+              Keranjang
+              <span id="cart-count" class="cart-count-inline">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <footer>
+  <main>
+    <section class="cart-page">
+      <h1 class="section-title" style="margin: 16px 40px 4px;">Keranjang Belanja</h1>
+      <p style="margin: 0 40px 12px; font-size: 14px; color: #6b7280;">
+        Cek lagi pesananmu sebelum dikirim ke WhatsApp admin RumahKueNuraisah.
+      </p>
+
+      <div class="cart-wrapper">
+        <!-- Muncul kalau keranjang kosong -->
+        <div id="cart-empty" class="cart-empty">
+          Keranjangmu masih kosong. Yuk pilih kue dulu di <a href="index.html">halaman utama</a>.
+        </div>
+
+        <!-- Muncul kalau ada isi -->
+        <div id="cart-table-wrapper" style="display: none;">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Produk</th>
+                <th>Harga</th>
+                <th>Qty</th>
+                <th>Subtotal</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="cart-body">
+              <!-- Diisi dari JavaScript -->
+            </tbody>
+          </table>
+
+          <div class="cart-summary">
+            <span>Total</span>
+            <span id="cart-total">Rp 0</span>
+          </div>
+
+          <div style="margin-top: 12px; text-align: right;">
+            <button id="btn-wa-checkout" class="btn-cta">
+              Konfirmasi via WhatsApp
+            </button>
+            <p style="font-size: 12px; color: #6b7280; margin-top: 6px;">
+              Setelah klik tombol di atas, kamu akan diarahkan ke WhatsApp dengan detail pesanan otomatis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer style="margin: 16px 40px 24px; font-size: 12px; color: #6b7280;">
       &copy; 2025 RumahKue. Semua hak cipta dilindungi.
     </footer>
   </main>
