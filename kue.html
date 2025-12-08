@@ -8,39 +8,40 @@
 </head>
 <body>
 <div class="page-wrapper">
-<header>
-  <div class="logo">RumahKueNuraisah</div>
+  <header>
+    <div class="logo">RumahKueNuraisah</div>
 
-  <div class="header-right">
-    <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">☰</button>
+    <div class="header-right">
+      <!-- tombol hamburger (muncul di HP) -->
+      <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">
+        ☰
+      </button>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Rumah Kue</a></li>
-        <li><a href="kue.html">Kue</a></li>
-        <li><a href="kue.html#peralatan">Peralatan</a></li>
-        <li><a href="tentang.html">Tentang</a></li>
-        <li><a href="cara-pesan.html">Cara Pesan</a></li>
-
-        <li class="nav-cart-item">
-          <a href="cart.html">
-            Keranjang
-            <span id="cart-count" class="cart-count-inline">0</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Rumah Kue</a></li>
+          <li><a href="kue.html">Kue</a></li>
+          <li><a href="kue.html#peralatan">Peralatan</a></li>
+          <li><a href="cara-pesan.html">Cara Pesan</a></li>
+          <li class="nav-cart-item">
+            <a href="cart.html">
+              Keranjang
+              <span id="cart-count" class="cart-count-inline">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
 
   <main>
-    <h2 style="margin-bottom:8px;">Semua Kue</h2>
-    <p style="font-size:13px;color:#6b7280;">
+    <h2 class="title-section">Semua Kue</h2>
+    <p class="subtitle-section">
       Pilih kue favoritmu, klik kartu produk untuk melihat detail.
     </p>
 
-    <div class="product-grid" style="margin-top:16px;">
+    <div class="product-grid">
 
       <!-- PRODUK 1 -->
       <a href="detail-kue.html" class="product-grid-card">
