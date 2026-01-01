@@ -31,9 +31,27 @@
 
   <main>
     <div class="detail-layout" style="margin-top:12px;">
-      <div class="detail-image-big">
-        <img src="../../images/kuekemasanbox/bananaStrudel/IMG-20251208-WA0007.jpg" alt="Nastar Premium" style="width:100%;border-radius:14px;" />
-      </div>
+<div class="detail-gallery">
+
+  <!-- GAMBAR UTAMA -->
+  <div class="gallery-main">
+    <img id="mainImage" 
+         src="../../images/kuekemasanbox/bananaStrudel/IMG-20251208-WA0007.jpg">
+  </div>
+
+  <!-- TOMBOL SLIDE -->
+  <button class="prev-btn" onclick="changeImage(-1)">‹</button>
+  <button class="next-btn" onclick="changeImage(1)">›</button>
+
+  <!-- THUMBNAIL -->
+  <div class="gallery-thumbs">
+    <img src="../../images/kuekemasanbox/bananaStrudel/IMG-20251208-WA0007.jpg" onclick="showImage(0)">
+    <img src="../../images/kuekemasanbox/bananaStrudel/IMG-20251208-WA0008.jpg" onclick="showImage(1)">
+    <img src="../../images/kuekemasanbox/bananaStrudel/IMG-20251208-WA0009.jpg" onclick="showImage(2)">
+  </div>
+
+</div>
+
       <div>
         <h1 class="detail-title">Banana Strudel</h1>
         <div class="detail-sub">Banana strudel isi pisang coklat keju</div>
@@ -57,6 +75,32 @@
     </div>
   </main>
 </div>
+
+<script>
+const images = [
+  "../../images/kuekemasanbox/bananaStrudel/IMG-20251208-WA0007.jpg",
+  "../../images/kuekemasanbox/bananaStrudel/IMG-20251208-WA0008.jpg",
+  "../../images/kuekemasanbox/bananaStrudel/IMG-20251208-WA0009.jpg"
+];
+
+let currentIndex = 0;
+
+function showImage(index) {
+  currentIndex = index;
+  document.getElementById("mainImage").src = images[index];
+
+  document.querySelectorAll(".gallery-thumbs img")
+    .forEach((img,i)=>img.classList.toggle("active", i===index));
+}
+
+function changeImage(step) {
+  currentIndex = (currentIndex + step + images.length) % images.length;
+  showImage(currentIndex);
+}
+
+// tampilkan pertama kali
+showImage(0);
+</script>
 
 <script src="../../cart.js"></script>
 </body>

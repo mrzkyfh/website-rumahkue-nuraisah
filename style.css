@@ -795,3 +795,49 @@ footer {
   object-fit: cover;      /* gambar dipotong agar tetap proporsional */
   object-position: center;
 }
+
+.detail-gallery {
+  position: relative;
+  max-width: 420px;
+}
+
+.gallery-main img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+.gallery-thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.gallery-thumbs img {
+  width: 80px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: .7;
+  border: 2px solid transparent;
+}
+
+.gallery-thumbs img:hover,
+.gallery-thumbs img.active {
+  opacity: 1;
+  border-color: #d66c6c;
+}
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 45%;
+  padding: 8px 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: #ffffffdd;
+  font-size: 20px;
+}
+.prev-btn { left: -15px; }
+.next-btn { right: -15px; }
+

@@ -31,25 +31,40 @@
 
   <main>
     <div class="detail-layout" style="margin-top:12px;">
-      <div class="detail-image-big">
-        <img src="images/kering-nastar.jpg" alt="Nastar Premium" style="width:100%;border-radius:14px;" />
-      </div>
-      <div>
-        <h1 class="detail-title">Nastar Premium Homemade</h1>
-        <div class="detail-sub">Toples 300gr • Isi ±30 pcs</div>
+<div class="detail-gallery">
 
-        <div class="detail-price">Rp 70.000</div>
+  <!-- GAMBAR UTAMA -->
+  <div class="gallery-main">
+    <img id="mainImage" 
+         src="../../images/kuekemasanbox/pastrysosis/Screenshot 2026-01-01 115917.png">
+  </div>
+
+  <!-- TOMBOL SLIDE -->
+  <button class="prev-btn" onclick="changeImage(-1)">‹</button>
+  <button class="next-btn" onclick="changeImage(1)">›</button>
+
+  <!-- THUMBNAIL -->
+  <div class="gallery-thumbs">
+    <img src="../../images/kuekemasanbox/pastrysosis/Screenshot 2026-01-01 115917.png" onclick="showImage(0)">
+    <img src="../../images/kuekemasanbox/pastrysosis/Screenshot 2026-01-01 120047.png" onclick="showImage(1)">
+    <img src="../../images/kuekemasanbox/pastrysosis/Screenshot 2026-01-01 120058.png" onclick="showImage(2)">
+    <img src="../../images/kuekemasanbox/pastrysosis/Screenshot 2026-01-01 120111.png" onclick="showImage(3)">
+  </div>
+
+</div>
+
+      <div>
+        <h1 class="detail-title">Pastry Sosis</h1>
+        <div class="detail-sub">Per Pack isi 10pcs</div>
+
+        <div class="detail-price">Rp 45.000</div>
 
         <p class="detail-desc">
-          Nastar lembut dengan isian selai nanas rumahan yang dimasak
-          lama hingga harum dan tidak terlalu manis. Tekstur cookies lumer
-          di mulut, cocok untuk hampers, acara keluarga, atau teman ngopi.
+          
         </p>
 
         <p class="detail-desc">
-          <strong>Bahan:</strong> Tepung terigu, butter premium, telur,
-          keju, selai nanas rumahan, tanpa pengawet.<br/>
-          <strong>Tahan:</strong> ± 2 minggu suhu ruang (kemasan tertutup).
+         
         </p>
 
         <div class="product-action">
@@ -61,6 +76,33 @@
     </div>
   </main>
 </div>
+
+<script>
+const images = [
+  "../../images/kuekemasanbox/pastrysosis/Screenshot 2026-01-01 115917.png",
+  "../../images/kuekemasanbox/pastrysosis/Screenshot 2026-01-01 120047.png",
+  "../../images/kuekemasanbox/pastrysosis/Screenshot 2026-01-01 120058.png",
+  "../../images/kuekemasanbox/pastrysosis/Screenshot 2026-01-01 120111.png"
+];
+
+let currentIndex = 0;
+
+function showImage(index) {
+  currentIndex = index;
+  document.getElementById("mainImage").src = images[index];
+
+  document.querySelectorAll(".gallery-thumbs img")
+    .forEach((img,i)=>img.classList.toggle("active", i===index));
+}
+
+function changeImage(step) {
+  currentIndex = (currentIndex + step + images.length) % images.length;
+  showImage(currentIndex);
+}
+
+// tampilkan pertama kali
+showImage(0);
+</script>
 
 <script src="../../cart.js"></script>
 </body>

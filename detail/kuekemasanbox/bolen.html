@@ -31,25 +31,39 @@
 
   <main>
     <div class="detail-layout" style="margin-top:12px;">
-      <div class="detail-image-big">
-        <img src="images/kering-nastar.jpg" alt="Nastar Premium" style="width:100%;border-radius:14px;" />
-      </div>
-      <div>
-        <h1 class="detail-title">Nastar Premium Homemade</h1>
-        <div class="detail-sub">Toples 300gr • Isi ±30 pcs</div>
+<div class="detail-gallery">
 
-        <div class="detail-price">Rp 70.000</div>
+  <!-- GAMBAR UTAMA -->
+  <div class="gallery-main">
+    <img id="mainImage" 
+         src="../../images/kuekemasanbox/pisangbolen/WhatsApp Image 2025-12-08 at 09.22.42_645d52dd.jpg">
+  </div>
+
+  <!-- TOMBOL SLIDE -->
+  <button class="prev-btn" onclick="changeImage(-1)">‹</button>
+  <button class="next-btn" onclick="changeImage(1)">›</button>
+
+  <!-- THUMBNAIL -->
+  <div class="gallery-thumbs">
+    <img src="../../images/kuekemasanbox/pisangbolen/WhatsApp Image 2025-12-08 at 09.22.43_5b10efd3.jpg" onclick="showImage(1)">
+    <img src="../../images/kuekemasanbox/pisangbolen/WhatsApp Image 2025-12-08 at 09.22.42_645d52dd.jpg" onclick="showImage(0)">
+    <img src="../../images/kuekemasanbox/pisangbolen/WhatsApp Image 2025-12-08 at 09.22.43_f5195ae5.jpg" onclick="showImage(2)">
+  </div>
+
+</div>
+
+      <div>
+        <h1 class="detail-title">Pisang Bolen</h1>
+        <div class="detail-sub">Harga per pack isi 10pcs</div>
+
+        <div class="detail-price">Rp 45.000</div>
 
         <p class="detail-desc">
-          Nastar lembut dengan isian selai nanas rumahan yang dimasak
-          lama hingga harum dan tidak terlalu manis. Tekstur cookies lumer
-          di mulut, cocok untuk hampers, acara keluarga, atau teman ngopi.
+          
         </p>
 
         <p class="detail-desc">
-          <strong>Bahan:</strong> Tepung terigu, butter premium, telur,
-          keju, selai nanas rumahan, tanpa pengawet.<br/>
-          <strong>Tahan:</strong> ± 2 minggu suhu ruang (kemasan tertutup).
+         
         </p>
 
         <div class="product-action">
@@ -61,6 +75,32 @@
     </div>
   </main>
 </div>
+
+<script>
+const images = [
+  "../../images/kuekemasanbox/pisangbolen/WhatsApp Image 2025-12-08 at 09.22.43_5b10efd3.jpg",
+  "../../images/kuekemasanbox/pisangbolen/WhatsApp Image 2025-12-08 at 09.22.42_645d52dd.jpg",
+  "../../images/kuekemasanbox/pisangbolen/WhatsApp Image 2025-12-08 at 09.22.43_f5195ae5.jpg"
+];
+
+let currentIndex = 0;
+
+function showImage(index) {
+  currentIndex = index;
+  document.getElementById("mainImage").src = images[index];
+
+  document.querySelectorAll(".gallery-thumbs img")
+    .forEach((img,i)=>img.classList.toggle("active", i===index));
+}
+
+function changeImage(step) {
+  currentIndex = (currentIndex + step + images.length) % images.length;
+  showImage(currentIndex);
+}
+
+// tampilkan pertama kali
+showImage(0);
+</script>
 
 <script src="../../cart.js"></script>
 </body>
