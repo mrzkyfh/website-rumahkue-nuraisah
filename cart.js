@@ -4,7 +4,7 @@
 const CART_KEY = "rumahkue_cart";
 // GANTI nomor WA di bawah ini (tanpa 0 di depan, tanpa +62)
 // Contoh: 6281234567890
-const WA_NUMBER = "6281234567890";
+const WA_NUMBER = "6281284814952";
 
 // ==========================
 // FUNGSI UTIL
