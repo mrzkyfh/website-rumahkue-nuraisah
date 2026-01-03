@@ -9,9 +9,17 @@
 
 body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #f7f5f3;
   color: #3f3f3f;
+
+  background:
+  linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)),
+  url("images/Gemini_Generated_Image_t0txz3t0txz3t0tx.png");
+background-repeat: repeat;
+background-size: 260px;
+background-attachment: fixed;
+
 }
+
 
 img {
   max-width: 100%;
