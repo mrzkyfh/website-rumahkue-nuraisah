@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Nastar Premium - RumahKue</title>
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+<div class="page-wrapper">
+<header>
+  <div class="logo">RumahKueNuraisah</div>
+
+  <div class="header-right">
+    <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">☰</button>
+
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Rumah Kue</a></li>
+          <li><a href="../../kue.html">Kue</a></li>
+          <li class="nav-cart-item">
+            <a href="../../cart.html">
+              Keranjang
+              <span id="cart-count" class="cart-count-inline">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+  </div>
+</header>
+
+  <main>
+    <div class="detail-layout" style="margin-top:12px;">
+<div class="detail-gallery">
+
+  <!-- GAMBAR UTAMA -->
+  <div class="gallery-main">
+    <img id="mainImage" 
+         src="../../images/kuekemasanbox/bananaStrudel/IMG-20251208-WA0007.jpg">
+  </div>
+
+  <!-- TOMBOL SLIDE -->
+  <button class="prev-btn" onclick="changeImage(-1)">‹</button>
+  <button class="next-btn" onclick="changeImage(1)">›</button>
+
+  <!-- THUMBNAIL -->
+  <div class="gallery-thumbs">
+    <img src="../../images/kuekering/minichocoroll/Screenshot 2026-01-03 193939.png" onclick="showImage(0)">
+    <img src="../../images/kuekering/minichocoroll/Screenshot 2026-01-03 193949.png" onclick="showImage(1)">
+    <img src="../../images/kuekering/minichocoroll/Screenshot 2026-01-03 193958.png" onclick="showImage(2)">
+    <img src="../../images/kuekering/minichocoroll/Screenshot 2026-01-03 194009.png" onclick="showImage(3)">
+    <img src="../../images/kuekering/minichocoroll/Screenshot 2026-01-03 194020.png" onclick="showImage(4)">
+  </div>
+
+</div>
+
+      <div>
+        <h1 class="detail-title">Mini Choco Roll</h1>
+        <div class="detail-sub"></div>
+
+        <div class="detail-price">Rp 47.500</div>
+
+        <p class="detail-desc">
+          
+        </p>
+
+        <p class="detail-desc">
+         
+        </p>
+
+        <div class="product-action">
+          <button class="btn-round">+ Tambah ke Keranjang</button>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+const images = [
+  "../../images/kuekering/minichocoroll/Screenshot 2026-01-03 193939.png",
+  "../../images/kuekering/minichocoroll/Screenshot 2026-01-03 193949.png",
+  "../../images/kuekering/minichocoroll/Screenshot 2026-01-03 193958.png",
+  "../../images/kuekering/minichocoroll/Screenshot 2026-01-03 194009.png",
+  "../../images/kuekering/minichocoroll/Screenshot 2026-01-03 194020.png"
+];
+
+let currentIndex = 0;
+
+function showImage(index) {
+  currentIndex = index;
+  document.getElementById("mainImage").src = images[index];
+
+  document.querySelectorAll(".gallery-thumbs img")
+    .forEach((img,i)=>img.classList.toggle("active", i===index));
+}
+
+function changeImage(step) {
+  currentIndex = (currentIndex + step + images.length) % images.length;
+  showImage(currentIndex);
+}
+
+// tampilkan pertama kali
+showImage(0);
+</script>
+
+<script src="../../cart.js"></script>
+</body>
+</html>
