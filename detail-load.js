@@ -19,8 +19,16 @@ async function initDetailPage() {
       return;
     }
 
-    // Isi Data
-    document.title = product.name + " - RumahKue";
+    // Isi Data & SEO
+    const pageTitle = `${product.name} - Rumah Kue Nuraisah`;
+    document.title = pageTitle;
+    
+    // Update Meta Description
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", product.short_description || `Jual ${product.name} fresh dan lezat di Rumah Kue Nuraisah.`);
+    }
+
     document.getElementById("product-name").textContent = product.name;
     document.getElementById("product-category").textContent = product.category;
     document.getElementById("product-price").textContent = window.RumahKueProducts.formatRupiah(product.price);
