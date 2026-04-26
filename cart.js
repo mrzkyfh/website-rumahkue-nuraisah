@@ -51,7 +51,7 @@ function updateCartCount() {
 /**
  * Tambah ke keranjang.
  * Bisa dipanggil dari:
- * - produk.js (dinamis)
+ * - product.js / catalog.js (dinamis)
  * - tombol statis (attachStaticProductButtons)
  */
 function addToCart(id, name, price, imageUrl) {

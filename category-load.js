@@ -1,18 +1,22 @@
-async function loadProdukGrid() {
-  const grid = document.getElementById("produk-grid");
-  if (!grid || !window.RumahKueProducts) return;
+async function loadCategoryProducts() {
+  const grid = document.getElementById("category-product-grid");
+  const categoryName = window.CAT_NAME;
+  
+  if (!grid || !categoryName || !window.RumahKueProducts) {
+    console.warn("Grid, Category Name, or RumahKueProducts missing.");
+    return;
+  }
 
-  grid.innerHTML = '<div class="product-empty-state">Memuat produk unggulan...</div>';
+  grid.innerHTML = '<div class="product-empty-state">Memuat produk ' + categoryName + '...</div>';
 
   try {
     const products = await window.RumahKueProducts.loadProducts({
-      featuredOnly: true,
-      limit: 6
+      category: categoryName
     });
 
     if (!products.length) {
       grid.innerHTML =
-        '<div class="product-empty-state">Belum ada produk aktif yang ditandai sebagai unggulan.</div>';
+        '<div class="product-empty-state">Belum ada produk di kategori ini.</div>';
       return;
     }
 
@@ -22,16 +26,16 @@ async function loadProdukGrid() {
       .map((product) => {
         const safeName = escapeHtml(product.name);
         const safeDescription = escapeHtml(
-          product.short_description || product.category || "Kue rumahan fresh"
+          product.short_description || product.category || "Kue fresh"
         );
         const safeImage = escapeHtml(
-          product.image_url || "images/Gemini_Generated_Image_t0txz3t0txz3t0tx.png"
+          product.image_url || "../images/Gemini_Generated_Image_t0txz3t0txz3t0tx.png"
         );
         const safeDetailUrl = escapeHtml(`/detail.html?slug=${product.slug}`);
 
         return `
-          <article class="product-card featured-product-card">
-            <a class="featured-product-link" href="${safeDetailUrl}">
+          <article class="product-card">
+            <a href="${safeDetailUrl}">
               <div class="product-image">
                 <img src="${safeImage}" alt="${safeName}" />
               </div>
@@ -41,10 +45,9 @@ async function loadProdukGrid() {
               <div class="product-size">${safeDescription}</div>
               <div class="product-price">${formatRupiah(product.price)}</div>
             </div>
-            <div class="featured-product-actions">
-              <a class="featured-product-detail" href="${safeDetailUrl}">Lihat detail</a>
+            <div class="product-action">
               <button
-                class="btn-round featured-add-btn"
+                class="btn-round add-to-cart-btn"
                 type="button"
                 data-product-id="${escapeHtml(product.id)}"
                 data-product-name="${safeName}"
@@ -58,7 +61,7 @@ async function loadProdukGrid() {
       })
       .join("");
 
-    grid.querySelectorAll(".featured-add-btn").forEach((button) => {
+    grid.querySelectorAll(".add-to-cart-btn").forEach((button) => {
       button.addEventListener("click", () => {
         addToCart(
           button.dataset.productId,
@@ -68,11 +71,11 @@ async function loadProdukGrid() {
         );
       });
     });
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error(error);
     grid.innerHTML =
-      '<div class="product-empty-state">Gagal memuat produk. Cek config Supabase atau API lama.</div>';
+      '<div class="product-empty-state">Gagal memuat produk.</div>';
   }
 }
 
-document.addEventListener("DOMContentLoaded", loadProdukGrid);
+document.addEventListener("DOMContentLoaded", loadCategoryProducts);

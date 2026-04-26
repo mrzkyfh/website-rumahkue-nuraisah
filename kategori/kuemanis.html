@@ -3,46 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RumahKue - Jualan Kue Online</title>
-
-  <!-- FONT OPSIONAL -->
+  <title>Kue Manis - RumahKue</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- CSS utama -->
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
 <div class="page-wrapper">
-
-  <!-- NAVBAR -->
   <header>
     <div class="logo">RumahKueNuraisah</div>
-
     <div class="header-right">
-      <!-- tombol hamburger (muncul di HP) -->
-      <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">
-        ☰
-      </button>
-
+      <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">☰</button>
       <nav>
         <ul>
-          <li><a href="index.html">Rumah Kue</a></li>
-          <li><a href="kue.html">Kue</a></li>
+          <li><a href="/index.html">Rumah Kue</a></li>
+          <li><a href="/kue.html">Kue</a></li>
           <li class="nav-cart-item">
-            <a href="cart.html">
-              Keranjang
-              <span id="cart-count" class="cart-count-inline">0</span>
-            </a>
+            <a href="/cart.html">Keranjang <span id="cart-count" class="cart-count-inline">0</span></a>
           </li>
         </ul>
       </nav>
     </div>
   </header>
 
- 
+  <main>
+    <section>
+      <div class="section-header">
+        <div class="section-title">KUE MANIS</div>
+      </div>
+      <div id="category-product-grid" class="product-row">
+        <div class="product-empty-state">Memuat produk...</div>
+      </div>
+    </section>
+  </main>
 </div>
 
-<script src="cart.js"></script>
-<script src="produk.js"></script>
+<script>window.CAT_NAME = "Kue Manis";</script>
+<script src="/site-config.js"></script>
+<script src="/product-data.js"></script>
+<script src="/cart.js"></script>
+<script src="/category-load.js"></script>
 </body>
 </html>

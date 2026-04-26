@@ -1,18 +1,15 @@
-async function loadProdukGrid() {
-  const grid = document.getElementById("produk-grid");
+async function loadAllProductsGrid() {
+  const grid = document.getElementById("all-products-grid");
   if (!grid || !window.RumahKueProducts) return;
 
-  grid.innerHTML = '<div class="product-empty-state">Memuat produk unggulan...</div>';
+  grid.innerHTML = '<div class="product-empty-state">Memuat produk...</div>';
 
   try {
-    const products = await window.RumahKueProducts.loadProducts({
-      featuredOnly: true,
-      limit: 6
-    });
+    const products = await window.RumahKueProducts.loadProducts();
 
     if (!products.length) {
       grid.innerHTML =
-        '<div class="product-empty-state">Belum ada produk aktif yang ditandai sebagai unggulan.</div>';
+        '<div class="product-empty-state">Belum ada produk aktif yang bisa ditampilkan.</div>';
       return;
     }
 
@@ -22,7 +19,7 @@ async function loadProdukGrid() {
       .map((product) => {
         const safeName = escapeHtml(product.name);
         const safeDescription = escapeHtml(
-          product.short_description || product.category || "Kue rumahan fresh"
+          product.short_description || product.category || "Kue fresh buatan rumahan"
         );
         const safeImage = escapeHtml(
           product.image_url || "images/Gemini_Generated_Image_t0txz3t0txz3t0tx.png"
@@ -30,27 +27,25 @@ async function loadProdukGrid() {
         const safeDetailUrl = escapeHtml(`/detail.html?slug=${product.slug}`);
 
         return `
-          <article class="product-card featured-product-card">
-            <a class="featured-product-link" href="${safeDetailUrl}">
-              <div class="product-image">
+          <article class="product-grid-card">
+            <a class="product-grid-link" href="${safeDetailUrl}">
+              <div class="product-grid-image">
                 <img src="${safeImage}" alt="${safeName}" />
               </div>
             </a>
-            <div class="product-info">
-              <div class="product-name">${safeName}</div>
-              <div class="product-size">${safeDescription}</div>
-              <div class="product-price">${formatRupiah(product.price)}</div>
-            </div>
-            <div class="featured-product-actions">
-              <a class="featured-product-detail" href="${safeDetailUrl}">Lihat detail</a>
+            <div class="product-grid-name">${safeName}</div>
+            <div class="product-grid-size">${safeDescription}</div>
+            <div class="product-grid-price">${formatRupiah(product.price)}</div>
+            <div class="product-grid-actions">
+              <a class="product-grid-link-btn" href="${safeDetailUrl}">Lihat detail</a>
               <button
-                class="btn-round featured-add-btn"
+                class="product-grid-btn"
                 type="button"
                 data-product-id="${escapeHtml(product.id)}"
                 data-product-name="${safeName}"
                 data-product-price="${escapeHtml(product.price)}"
                 data-product-image="${safeImage}">
-                +
+                Tambah
               </button>
             </div>
           </article>
@@ -58,7 +53,7 @@ async function loadProdukGrid() {
       })
       .join("");
 
-    grid.querySelectorAll(".featured-add-btn").forEach((button) => {
+    grid.querySelectorAll(".product-grid-btn").forEach((button) => {
       button.addEventListener("click", () => {
         addToCart(
           button.dataset.productId,
@@ -68,11 +63,11 @@ async function loadProdukGrid() {
         );
       });
     });
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error(error);
     grid.innerHTML =
       '<div class="product-empty-state">Gagal memuat produk. Cek config Supabase atau API lama.</div>';
   }
 }
 
-document.addEventListener("DOMContentLoaded", loadProdukGrid);
+document.addEventListener("DOMContentLoaded", loadAllProductsGrid);

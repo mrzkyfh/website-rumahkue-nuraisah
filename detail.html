@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Produk - RumahKue</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .detail-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 40px;
+    }
+    @media (max-width: 768px) {
+      .detail-container { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
+    }
+    .gallery-main {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f3eee8;
+      aspect-ratio: 1/1;
+    }
+    .gallery-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s;
+    }
+    .gallery-thumbs {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      overflow-x: auto;
+      padding-bottom: 5px;
+    }
+    .thumb-item {
+      width: 70px;
+      height: 70px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      flex-shrink: 0;
+    }
+    .thumb-item.active { border-color: #e28a8a; }
+    .thumb-item img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .detail-info { display: flex; flex-direction: column; gap: 15px; }
+    .detail-category { font-size: 14px; color: #b48a6b; text-transform: uppercase; letter-spacing: 1px; }
+    .detail-name { font-family: "Playfair Display", serif; font-size: 32px; color: #7a4a4a; }
+    .detail-price-box { display: flex; align-items: center; gap: 15px; margin: 10px 0; }
+    .price-now { font-size: 28px; font-weight: 700; color: #c46d6d; }
+    .price-old { font-size: 18px; color: #a19a90; text-decoration: line-through; }
+    .detail-short { font-size: 16px; color: #6b5b4c; line-height: 1.6; border-left: 3px solid #e28a8a; padding-left: 15px; }
+    .detail-full { font-size: 14px; color: #5f5247; line-height: 1.8; white-space: pre-line; }
+    
+    .action-box { display: flex; gap: 15px; margin-top: 20px; }
+    .btn-buy { flex: 1; padding: 15px; border-radius: 999px; border: none; background: #e28a8a; color: #fff; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .btn-buy:hover { background: #d16c6c; }
+    .btn-whatsapp { flex: 1; padding: 15px; border-radius: 999px; border: 1px solid #25d366; background: #fff; color: #25d366; font-weight: 600; cursor: pointer; text-align: center; }
+    .btn-whatsapp:hover { background: #f0fff4; }
+    
+    #loading-state { padding: 100px; text-align: center; font-size: 18px; color: #7a4a4a; }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+  <header>
+    <div class="logo">RumahKueNuraisah</div>
+    <div class="header-right">
+      <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">☰</button>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Rumah Kue</a></li>
+          <li><a href="/kue.html">Kue</a></li>
+          <li class="nav-cart-item">
+            <a href="/cart.html">Keranjang <span id="cart-count" class="cart-count-inline">0</span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="detail-content" hidden>
+    <div class="detail-container">
+      <!-- Bagian Kiri: Galeri -->
+      <div class="product-gallery">
+        <div class="gallery-main">
+          <img id="main-image" src="" alt="Produk" />
+        </div>
+        <div id="thumb-list" class="gallery-thumbs">
+          <!-- Thumbnail akan muncul di sini -->
+        </div>
+      </div>
+
+      <!-- Bagian Kanan: Info -->
+      <div class="detail-info">
+        <div id="product-category" class="detail-category">Kategori</div>
+        <h1 id="product-name" class="detail-name">Nama Produk</h1>
+        
+        <div class="detail-price-box">
+          <span id="product-price" class="price-now">Rp 0</span>
+          <span id="product-old-price" class="price-old"></span>
+        </div>
+
+        <div id="product-short-desc" class="detail-short">Deskripsi singkat produk...</div>
+        
+        <div id="product-full-desc" class="detail-full">Deskripsi lengkap produk akan muncul di sini...</div>
+
+        <div class="action-box">
+          <button id="add-to-cart-btn" class="btn-buy">
+            <span>🛒</span> Tambah ke Keranjang
+          </button>
+          <a id="whatsapp-link" href="#" target="_blank" class="btn-whatsapp">
+            Tanya via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="loading-state">
+    <p>Sedang memuat detail produk...</p>
+  </div>
+</div>
+
+<script src="/site-config.js"></script>
+<script src="/product-data.js"></script>
+<script src="/cart.js"></script>
+<script src="/detail-load.js"></script>
+</body>
+</html>
